@@ -1,0 +1,284 @@
+/*
+Theme Name: 
+Text Domain: 
+Version: 1.0.0
+Author: SciStories
+Author URI: http://scistories.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto&display=swap");
+:root {
+  /* Fonts */
+  --mainFont: "Oswald", sans-serif;
+  --textFont: "Roboto", sans-serif;
+
+  /*Colors*/
+  --primaryColor: #051f34;
+  --textGray: #5d5d5d;
+  --secondTitle: #c1592b;
+  --bgGray: #f3f3f4;
+  --borderGray: #d9d9d9;
+  --black: #232323;
+  --white: #ffffff;
+}
+
+/* 
+------ IMPORTANT ---- 
+Uncomment this after you finish the project, 
+this properties avoid burger menu list from overflowing:
+
+html,
+body {
+  overflow-x: hidden;
+  position: relative;
+} 
+
+*/
+
+html {
+  font-size: 62.5%; /*10 px = 1rem */
+}
+
+body {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: var(--mainFont);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* UTILITIES */
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* MENU */
+
+.ss-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 95px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .ss-navbar {
+    height: 105px;
+  }
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+}
+
+.navbar__logo {
+  line-height: 0;
+}
+
+.navbar__logo__img {
+  width: 120px;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar__logo__img {
+    width: 160px;
+  }
+}
+
+.navbar__social {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.6rem;
+}
+
+.twitter,
+.instagram {
+  background-color: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.twitter a,
+.instagram a {
+  line-height: 0;
+}
+
+.instagram i,
+.twitter i {
+  font-size: 1.8rem;
+  color: var(--white);
+  cursor: pointer;
+  padding-left: 0.1rem;
+}
+
+.twitter i {
+  padding-top: 0.1rem;
+}
+
+.navbar__burger {
+  cursor: pointer;
+}
+
+.navbar__burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--navyBlue);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu.nav-active {
+  transform: translateX(0%);
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--white);
+}
+
+.navbar__desktop {
+  display: none;
+}
+
+.navbar__mobile {
+  display: flex;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-link:hover {
+    color: var(--green);
+  }
+
+  .navbar__mobile {
+    display: none;
+  }
+
+  .navbar__desktop {
+    display: flex;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: var(--mainFont);
+}
+
+.current_page_item .nav-link {
+  color: var(--white);
+  font-weight: var(--boldFont);
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1024px) {
+  .current_page_item .nav-link {
+    color: var(--navyBlue);
+    font-weight: var(--boldFont);
+    text-decoration: none;
+  }
+}
+
+.navbar__menu ul li:last-child {
+  padding-bottom: unset;
+}
+
+.navbar__burger {
+  margin-left: 2.4rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .menu {
+    position: absolute;
+    right: 0;
+    height: calc(100vh - 95px);
+    top: 95px;
+    background-color: var(--navyBlue);
+    flex-direction: column;
+    width: 70%;
+    transition: transform 0.5s ease-in;
+    transform: translateX(100%);
+    z-index: 3;
+    align-items: center;
+    justify-content: start;
+    padding-top: 6.4rem;
+  }
+
+  .nav-item {
+    padding-bottom: 6rem;
+    opacity: 0;
+  }
+
+  .nav-link {
+    color: var(--white);
+  }
+}
+
+@keyframes fadeLinks {
+  from {
+    opacity: 0;
+    transform: translate(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: (0px);
+  }
+}
+
+.toggle .first {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .second {
+  opacity: 0;
+}
+
+.toggle .third {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar__menu {
+    display: flex;
+    gap: 4.8rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar__burger {
+    display: none;
+  }
+
+  .menu {
+    gap: 3rem;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--textColor);
+  }
+}
+
+.icon__transform {
+  transform: rotate(-180deg) translateX(-2rem);
+  /* transition: all 0.3s ease; */
+}

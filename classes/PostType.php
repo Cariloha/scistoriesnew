@@ -43,19 +43,19 @@ if (!class_exists('scistories_Custom_Posttype')) {
 		public static function add_post_type()
 		{
 
-			/* To create a team Post Type */
+			/* To create a quotes Post Type */
 			register_post_type(
-				'team',
+				'quotes',
 				[
 					'labels'       => [
-						'name'          => __('Team', 'scistories'),
-						'singular_name' => __('Team', 'scistories'),
+						'name'          => __('Quotes', 'scistories'),
+						'singular_name' => __('Quotes', 'scistories'),
 					],
 					'public'       => true,
 					'show_in_rest' => true,
 					'show_ui'      => true,
-					'menu_icon'    => 'dashicons-groups',
-					'supports'     => ['title', 'editor', 'thumbnail'],
+					'menu_icon'    => 'dashicons-format-quote',
+					'supports'     => ['title', 'thumbnail'],
 				]
 			);
 

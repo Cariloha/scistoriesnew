@@ -35,6 +35,8 @@ require_once scistories_DIR . '/classes/Publications.php';
 
 /*Metaboxes*/
 require_once scistories_DIR . '/metaboxes/global-metaboxes.php';
+require_once scistories_DIR . '/metaboxes/home-metaboxes.php';
+
 
 /*Custom posts metaboxes*/
-require_once scistories_DIR . '/metaboxes/custom_posts/team-cpt-metabox.php';
+require_once scistories_DIR . '/metaboxes/custom_posts/quotes-cpt-metabox.php';
